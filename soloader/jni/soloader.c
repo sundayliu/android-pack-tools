@@ -5,7 +5,7 @@ typedef int (*pfn_main)(int,char**);
 int main(int argc, char* argv[])
 {
     printf("hello\n");
-    const char* so_path = "/data/local/tmp/xxx.so";
+    const char* so_path = "/data/local/tmp/libexecgame.so";
     void* handle = NULL;
     void* pfn = NULL;
     if (argc == 2)
