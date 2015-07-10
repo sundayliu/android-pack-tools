@@ -1,1 +1,3 @@
 #NDK_TOOLCHAIN_VERSION:=clang3.5
+#APP_OPTIM:=debug
+APP_ABI:=armeabi

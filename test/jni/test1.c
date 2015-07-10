@@ -21,6 +21,25 @@ int my_thumb2(int dummy)
     );
 }
 
+static int add(int a, int b)
+{
+    int sum;
+    __asm__(
+    "ADD %[s],%[a],%[b];"
+    : [s] "=r" (sum)
+    : [a] "r" (a), [b] "r" (b)
+    );
+    return sum;
+}
+
+void test_branch_instructions()
+{
+    __asm__(
+    "__start1:;"
+    "B __start1;"
+    );
+}
+
 int main()
 {
     int n = my_thumb(12);
@@ -28,5 +47,10 @@ int main()
     
     n = my_thumb2(12);
      printf("result:%08x\n", n);
+     
+     n = add(12,144);
+     printf("result:%08x\n", n);
+     
+     test_branch_instructions();
     return 0;
 }
