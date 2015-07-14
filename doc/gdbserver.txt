@@ -1,0 +1,10 @@
+1 adb push gdbserver /data/local/tmp
+2 ./gdbserver :123456 /data/local/tmp/exe
+3 adb forward tcp:123456 tcp:123456
+4 arm-linux-androideabi-gdb.exe
+5 (gdb) target remote 127.0.0.1:123456
+
+gdbserver :123456 --attach pid
+
+
+(gdb) x/16xw 0x5f6fef50

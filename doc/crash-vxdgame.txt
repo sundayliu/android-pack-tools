@@ -1,0 +1,3 @@
+oppop 手机
+
+libc.so 没有导出 __lshrdi3
