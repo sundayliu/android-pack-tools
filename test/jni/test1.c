@@ -40,6 +40,13 @@ void test_branch_instructions()
     );
 }
 
+void opcode_len()
+{
+    __asm__(
+    "BL test_branch_instructions;"
+    );
+}
+
 int main()
 {
     int n = my_thumb(12);

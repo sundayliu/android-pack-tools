@@ -2,3 +2,33 @@ FE E7
 
 __start:
     B __start
+    
+    
+LSL Logical Shift Left
+
+16 thumb thumb-2 code
+LSLS Rd, Rm, #sh  Rd and Rm must both be Lo Registers
+LSRS
+
+arch/ABI    instruction     syscall #       retval
+------------------------------------------------------
+arm/EABI   svc 0x0         r7                 r0
+
+arch/ABI    arg1    arg2    arg3    arg4    arg5    arg6    arg7
+-----------------------------------------------------------------------
+arm/EABI    r0      r1      r2          r3      r4      r5          r6
+
+
+void* mmap2(void* addr, size_t length,  int prot, int flags, int fd, off_t pgoffset);
+
+MVNS  R0,R1  R0 = ~R1
+
+===== BL ====
+00031D4C 00F0C0F8   BL sub_31ED0
+
+F000    11bit    000
+F8C0    11bit    0c0
+
+(000 << 12) + (0xc0 << 1) = 0x180
+
+0x31D4C + 0x180 + 2 * 2 = 0x31ED0
