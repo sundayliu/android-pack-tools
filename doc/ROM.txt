@@ -1,0 +1,29 @@
+radio
+
+嵌入式系统
+======================
+IPL --> SPL --> OS
+
+IPL Initial Program Loader
+SPL Second Program Loader
+
+Android
+======================
+SPL <==> bootloader
+fastboot
+recovery
+
+fastboot刷入命令格式：fastboot flash 系统分区 对应的name.img
+
+fastboot.exe flash recovery recovery.img
+fastboot flash system system.img
+
+
+BOOT：        boot.img，Linux kernel (within normal ramdisk)
+MISC：        bootloader message struct
+RECOVERY：    recovery.img，Linux kernel (within recovery ramdisk)
+SYSTEM：      system.img
+DATA：        userdata.img
+CACHE：       some cache files
+
+mount -t ext4 -o loop system.img  systemimg

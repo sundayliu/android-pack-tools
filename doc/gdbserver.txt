@@ -2,6 +2,10 @@
 2 ./gdbserver :123456 /data/local/tmp/exe
 3 adb forward tcp:123456 tcp:123456
 4 arm-linux-androideabi-gdb.exe
+
+set disassemble-next on
+set step-mode on
+
 5 (gdb) target remote 127.0.0.1:123456
 
 gdbserver :123456 --attach pid
@@ -12,7 +16,7 @@ gdbserver :123456 --attach pid
 
 set solib-search-path obj/local/armeabi
 
-You can enter more paths and separate them by colon (:) character.
+You can enter more paths and separate them by colon (:) character.  ;
 
 You can find the set solib-search-path command in obj/local/armeabi/gdb.setup file.
 
