@@ -16,12 +16,15 @@ gdbserver :123456 --attach pid
 
 set solib-search-path obj/local/armeabi
 
+set solib-search-path e:\android;e:\android\system\bin;e:\android\system\lib
+
 You can enter more paths and separate them by colon (:) character.  ;
 
 You can find the set solib-search-path command in obj/local/armeabi/gdb.setup file.
 
 查看LR值
 i r $lr
+i r $pc
 
 查看内存
 x/nfu address
@@ -34,3 +37,8 @@ set *指针=value
 set *(char*)0x111 = 1
 set *(unsigned short*)0x8048a54 = 0xfffe
 set {unsigned short}0x8048a54 = 0xfffe
+
+share  load symbols
+b soinfo::CallFunction
+b soinfo::CallConstructors
+b soinfo::

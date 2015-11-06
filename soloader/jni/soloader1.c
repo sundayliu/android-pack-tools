@@ -62,13 +62,32 @@ void print_soinfo(soinfo* si)
 
 int main(int argc, char* argv[])
 {
+    printf("hello\n");
+
     void* handle = NULL;
     
-    handle = dlopen("/data/local/tmp/libexec.so", 0);
+    /*handle = dlopen("/data/local/tmp/libexec.so", 0);*/
+    handle = dlopen("libc.so", 0);
     printf("soinfo:%p\n", handle);
     if (handle != NULL)
     {
         print_soinfo((soinfo*)handle);
     }
+
+     handle = dlopen("/data/local/tmp//libexec.so", 0);
+    printf("soinfo:%p\n", handle);
+    if (handle != NULL)
+    {
+        print_soinfo((soinfo*)handle);
+    }
+    
+    handle = dlopen("/data/local/tmp/libexecmain.so", 0);
+    printf("soinfo:%p\n", handle);
+    if (handle != NULL)
+    {
+        print_soinfo((soinfo*)handle);
+    }
+    
+    
     return 0;
 }
