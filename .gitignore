@@ -29,3 +29,7 @@ proguard/
 *.log
 temp/*
 2015-07-08/
+
+*.sdf
+*.suo
+out/
