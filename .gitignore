@@ -33,3 +33,6 @@ temp/*
 *.sdf
 *.suo
 out/
+
+*.pyc
+__pycache__/
