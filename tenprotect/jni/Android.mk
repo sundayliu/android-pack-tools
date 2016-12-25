@@ -10,6 +10,8 @@ LOCAL_CFLAGS := -fvisibility=hidden
 
 LOCAL_LDLIBS:= -llog
 
+LOCAL_ARM_MODE:=arm
+
 LOCAL_LDFLAGS:= -Wl,--version-script=$(LOCAL_PATH)/tp_version_scripts.txt
 
 include $(BUILD_SHARED_LIBRARY)
